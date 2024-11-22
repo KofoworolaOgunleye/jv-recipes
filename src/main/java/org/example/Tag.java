@@ -7,7 +7,6 @@ import jakarta.persistence.OneToMany;
 
 @Entity
 public class Tag {
-    @OneToMany
     @Id
     @GeneratedValue
     Long id;
@@ -20,5 +19,13 @@ public class Tag {
     }
 
     public Tag() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
     }
 }

@@ -1,25 +1,25 @@
 package org.example;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity
 public class Comment {
-    @OneToMany
+
     @Id
     @GeneratedValue
     Long id;
 
     String text;
     Date datePosted;
-    String Author;
+
+    @ManyToOne
+    @JoinColumn(name = "person_id")
+    Person Author;
     String associatedRecipe;
 
-    public Comment(Long id, String text, Date datePosted, String author, String associatedRecipe) {
+    public Comment(Long id, String text, Date datePosted, Person author, String associatedRecipe) {
         this.id = id;
         this.text = text;
         this.datePosted = datePosted;
@@ -28,5 +28,25 @@ public class Comment {
     }
 
     public Comment() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public Date getDatePosted() {
+        return datePosted;
+    }
+
+    public Person getAuthor() {
+        return Author;
+    }
+
+    public String getAssociatedRecipe() {
+        return associatedRecipe;
     }
 }

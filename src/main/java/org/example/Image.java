@@ -25,4 +25,20 @@ public class Image {
 
     public Image() {
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public String getFiledata() {
+        return filedata;
+    }
+
+    public String getAssociatedRecipe() {
+        return associatedRecipe;
+    }
 }

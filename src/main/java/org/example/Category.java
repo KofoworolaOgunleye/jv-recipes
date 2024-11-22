@@ -7,7 +7,6 @@ import jakarta.persistence.OneToMany;
 
 @Entity
 public class Category {
-    @OneToMany
     @Id
     @GeneratedValue
     Long id;
@@ -20,5 +19,17 @@ public class Category {
     }
 
     public Category() {
+    }
+
+    public Category(String name) {
+        Name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return Name;
     }
 }

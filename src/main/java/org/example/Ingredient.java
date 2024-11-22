@@ -8,7 +8,6 @@ import jakarta.persistence.OneToMany;
 @Entity
 public class Ingredient {
 
-    @OneToMany
     @Id
     @GeneratedValue
     Long id;
@@ -23,6 +22,29 @@ public class Ingredient {
         this.unitOfMeasurement = unitOfMeasurement;
     }
 
+    public Ingredient(String name, String quantity, String unitOfMeasurement) {
+        this.name = name;
+        this.quantity = quantity;
+        this.unitOfMeasurement = unitOfMeasurement;
+    }
+
     public Ingredient() {
+    }
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public String getUnitOfMeasurement() {
+        return unitOfMeasurement;
     }
 }
